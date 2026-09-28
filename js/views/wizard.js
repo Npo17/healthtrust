@@ -3,7 +3,7 @@ import { emptyDay, ensureDay } from '../store.js';
 import { dayTotals, sleepOf } from '../metrics.js';
 import { foodItem } from '../parse.js';
 import {
-  addDays, agoText, clone, diffDays, esc, fmtHours, fmtLong, fmtNum, isValidISO, numValue, todayISO, uid,
+  addDays, agoText, clone, diffDays, esc, fmtHours, fmtLong, fmtNum, fromISO, isValidISO, numValue, todayISO, uid,
 } from '../utils.js';
 import { lastSession } from './day.js';
 
@@ -16,15 +16,24 @@ const QUESTIONS = {
   snacks: '¿Picaste algo o comiste postre?',
 };
 
-export const STEPS = [
+const ALL_STEPS = [
   ...MEAL_SLOTS.map((s) => s.id),
   'suplementos', 'fuerza', 'cardio', 'sueno', 'peso', 'cierre',
 ];
 
+export const isWeighDay = (iso, day) => fromISO(iso).getDay() === 6 || day?.weight != null;
+
+// El pesaje es semanal (sábado en ayunas): los demás días no se pregunta.
+function stepsFor(state, iso) {
+  return ALL_STEPS.filter((s) => s !== 'peso' || isWeighDay(iso, state.days[iso]));
+}
+
 const hasFood = (day, slot) => (day.meals[slot] || []).some((i) => i.text);
 
 // Primer paso que todavía no tiene nada cargado, para retomar donde quedó.
-export function firstPending(state, day) {
+export function firstPending(state, iso) {
+  const day = state.days[iso];
+  const STEPS = stepsFor(state, iso);
   if (!day) return STEPS[0];
   const done = {
     suplementos: state.supplements.every((s) => day.supplements[s.id]),
@@ -39,7 +48,9 @@ export function firstPending(state, day) {
 function params(ctx) {
   const d = ctx.params.get('d');
   const s = ctx.params.get('s');
-  return { iso: isValidISO(d) ? d : todayISO(), step: STEPS.includes(s) ? s : STEPS[0] };
+  const iso = isValidISO(d) ? d : todayISO();
+  const steps = stepsFor(ctx.state, iso);
+  return { iso, steps, step: steps.includes(s) ? s : steps[0] };
 }
 
 function macro(item) {
@@ -169,10 +180,10 @@ function closeStep(ctx, day) {
   };
 }
 
-const TITLES = { suplementos: '¿Tomaste los suplementos?', fuerza: '¿Entrenaste fuerza?', cardio: '¿Hiciste bici u otro cardio?', sueno: '¿A qué hora te acostaste y te levantaste?', peso: '¿Te pesaste?', cierre: '¿Cómo fue el día?' };
+const TITLES = { suplementos: '¿Tomaste los suplementos?', fuerza: '¿Entrenaste fuerza?', cardio: '¿Hiciste bici u otro cardio?', sueno: '¿A qué hora te acostaste y te levantaste?', peso: 'Es sábado: ¿cuánto pesaste en ayunas?', cierre: '¿Cómo fue el día?' };
 
 export function render(ctx) {
-  const { iso, step } = params(ctx);
+  const { iso, step, steps: STEPS } = params(ctx);
   ctx.iso = iso;
   const day = ctx.state.days[iso] || emptyDay();
   const i = STEPS.indexOf(step);
@@ -204,8 +215,8 @@ function dayOf(ctx) {
 }
 
 function goStep(ctx, delta) {
-  const { iso, step } = params(ctx);
-  const target = STEPS[STEPS.indexOf(step) + delta];
+  const { iso, step, steps } = params(ctx);
+  const target = steps[steps.indexOf(step) + delta];
   if (!target) {
     ctx.go('hoy', { d: iso });
     ctx.toast('Día cargado. ¡Bien ahí!');

@@ -4,7 +4,7 @@ import { dayTotals, sleepOf } from '../metrics.js';
 import {
   addDays, clone, esc, fmtHours, fmtLong, fmtNum, isoWeek, isValidISO, numValue, planWeek, todayISO, uid,
 } from '../utils.js';
-import { firstPending } from './wizard.js';
+import { firstPending, isWeighDay } from './wizard.js';
 
 function currentDate(ctx) {
   const d = ctx.params.get('d');
@@ -207,14 +207,14 @@ function summaryHtml(ctx, day, iso) {
     ${summaryRow(iso, 'fuerza', 'Fuerza', day.strength.map((s) => s.name || 'Fuerza').join(' + '))}
     ${summaryRow(iso, 'cardio', 'Cardio', cardio)}
     ${summaryRow(iso, 'sueno', 'Sueño', sleep ? `${fmtHours(sleep)} (${day.sleep.bed || '?'} → ${day.sleep.wake || '?'})` : '')}
-    ${summaryRow(iso, 'peso', 'Peso', day.weight != null ? `${fmtNum(day.weight, 2)} kg` : '')}
+    ${isWeighDay(iso, day) ? summaryRow(iso, 'peso', 'Peso', day.weight != null ? `${fmtNum(day.weight, 2)} kg` : '') : ''}
     ${day.cheat ? summaryRow(iso, 'cierre', 'Permitido', 'Sí') : ''}
   </section>`;
 }
 
 function simpleRender(ctx, iso, day) {
   const started = Object.values(day.meals).some((l) => l.length) || day.strength.length || day.cardio.length;
-  const next = firstPending(ctx.state, ctx.state.days[iso]);
+  const next = firstPending(ctx.state, iso);
   return `
   <div class="big-actions">
     <a class="btn big" href="#/cargar?d=${iso}&s=${next}">${started ? 'Seguir cargando' : 'Cargar el día'}<small>Paso a paso, una pregunta por pantalla</small></a>
