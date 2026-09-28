@@ -41,6 +41,9 @@ export const DEFAULT_SUPPLEMENTS = [
 
 export const DEFAULT_TEMPLATES = [
   { id: 'tpl-tostadas', short: 'Tostadas + huevos', text: '2 tostadas integrales + queso crema light + 2 huevos revueltos', protein: 21, kcal: 310, slots: ['desayuno', 'merienda', 'cena'] },
+  { id: 'tpl-tostadas-pollo', short: 'Tostadas + huevos + pollo', text: '2 tostadas integrales + queso crema light + 2 huevos revueltos + pollo + zanahoria', protein: 52, kcal: 500, slots: ['desayuno', 'almuerzo', 'cena'] },
+  { id: 'tpl-yogur-15', short: 'Yogur + 1,5 scoop', text: 'Yogur griego natural (20 g prot) + 1 scoop y medio de whey', protein: 57, kcal: 395, slots: ['post', 'merienda'] },
+  { id: 'tpl-pollo-zanahoria', short: 'Pollo con zanahoria', text: 'Pollo con zanahoria', protein: 56, kcal: 330, slots: ['almuerzo', 'cena'] },
   { id: 'tpl-cafe', short: 'Café negro', text: 'Café negro', protein: 0, kcal: 5, slots: ['desayuno', 'merienda'] },
   { id: 'tpl-yogur-scoop', short: 'Yogur + scoop', text: 'Yogur griego sin endulzar + 1 scoop de whey', protein: 45, kcal: 320, slots: ['post', 'merienda', 'snacks'] },
   { id: 'tpl-scoop', short: 'Scoop whey', text: '1 scoop Creatine & Whey', protein: 25, kcal: 147, slots: ['post'] },
@@ -59,6 +62,25 @@ export const DEFAULT_TEMPLATES = [
   { id: 'tpl-choco', short: '1 cuadradito choco', text: '1 cuadradito de chocolate', protein: 0, kcal: 30, slots: ['post', 'snacks'] },
   { id: 'tpl-pororo', short: 'Pororó cine', text: 'Pororó (cine)', protein: 3, kcal: 400, slots: ['snacks'] },
 ];
+
+// Lo que se carga con "Mi día típico"; se puede reemplazar desde la pantalla Día.
+export const DEFAULT_TYPICAL = {
+  meals: {
+    desayuno: ['tpl-cafe', 'tpl-tostadas-pollo'],
+    merienda: ['tpl-cafe'],
+    post: ['tpl-yogur-15'],
+  },
+  supplements: ['multi', 'omega3', 'creatina', 'colageno', 'magnesio'],
+};
+
+export function typicalFromDefaults() {
+  const byId = Object.fromEntries(DEFAULT_TEMPLATES.map((t) => [t.id, t]));
+  const meals = {};
+  for (const [slot, ids] of Object.entries(DEFAULT_TYPICAL.meals)) {
+    meals[slot] = ids.map((id) => ({ text: byId[id].text, protein: byId[id].protein, kcal: byId[id].kcal }));
+  }
+  return { meals, supplements: Object.fromEntries(DEFAULT_TYPICAL.supplements.map((id) => [id, true])) };
+}
 
 const ex = (name, sets, reps) => ({ name, sets, reps: String(reps) });
 

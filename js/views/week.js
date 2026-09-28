@@ -54,11 +54,14 @@ export function render(ctx) {
   const n = planWeek(start, state.profile.planStart);
 
   const head = days.map((iso) => `<th class="${iso === today ? 'today' : ''}"><a href="#/hoy?d=${iso}">${cap(fmtShort(iso))}</a></th>`).join('');
-  const body = rows(state).map(([label, fn]) => `<tr><th>${label}</th>${days.map((iso) => {
-    const d = state.days[iso];
-    const html = d && !isDayEmpty(d) ? fn(d) : '';
-    return `<td class="${iso === today ? 'today' : ''}">${html || '<span class="muted">—</span>'}</td>`;
-  }).join('')}</tr>`).join('');
+  const body = rows(state).map(([label, fn]) => {
+    const cells = days.map((iso) => {
+      const d = state.days[iso];
+      return d && !isDayEmpty(d) ? fn(d) : '';
+    });
+    if (!cells.some(Boolean)) return '';
+    return `<tr><th>${label}</th>${cells.map((html, i) => `<td class="${days[i] === today ? 'today' : ''}">${html || '<span class="muted">—</span>'}</td>`).join('')}</tr>`;
+  }).join('');
 
   return `
   <section class="daybar">
@@ -80,7 +83,7 @@ export function render(ctx) {
   <section class="card"><h2>Qué te falta y qué va bien</h2><div class="spaced">${alertsHtml(alertsFor(state, m))}</div></section>
   <section class="card flush">
     <div class="card-head pad"><h2>Planilla semanal</h2><span class="muted small">Tocá un día para editarlo</span></div>
-    <div class="table-wrap"><table class="week-table"><thead><tr><th></th>${head}</tr></thead><tbody>${body}</tbody></table></div>
+    ${body ? `<div class="table-wrap"><table class="week-table"><thead><tr><th></th>${head}</tr></thead><tbody>${body}</tbody></table></div>` : '<p class="muted pad-text">Todavía no cargaste nada esta semana. Andá a <a href="#/hoy">Día</a> y tocá "Mi día típico".</p>'}
   </section>`;
 }
 

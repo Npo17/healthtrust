@@ -1,5 +1,5 @@
 import {
-  DEFAULT_ROUTINES, DEFAULT_SUPPLEMENTS, DEFAULT_TARGETS, DEFAULT_TEMPLATES,
+  DEFAULT_ROUTINES, DEFAULT_SUPPLEMENTS, DEFAULT_TARGETS, DEFAULT_TEMPLATES, typicalFromDefaults,
 } from './defaults.js';
 import { clone, isValidISO } from './utils.js';
 
@@ -14,6 +14,7 @@ export function createState() {
     supplements: clone(DEFAULT_SUPPLEMENTS),
     templates: clone(DEFAULT_TEMPLATES),
     routines: clone(DEFAULT_ROUTINES),
+    typical: typicalFromDefaults(),
     days: {},
     meta: { createdAt: new Date().toISOString(), lastBackupAt: null },
   };
@@ -68,6 +69,7 @@ export function normalizeState(raw) {
     supplements: Array.isArray(raw.supplements) ? raw.supplements : base.supplements,
     templates: Array.isArray(raw.templates) ? raw.templates : base.templates,
     routines: Array.isArray(raw.routines) ? raw.routines : base.routines,
+    typical: raw.typical && raw.typical.meals ? raw.typical : base.typical,
     days,
     meta: { ...base.meta, ...(raw.meta || {}) },
   };
@@ -110,10 +112,38 @@ export function isDayEmpty(day) {
     || (day.notes || '').trim());
 }
 
+const blank = (v) => v === null || v === undefined || v === '';
+
+// Completa solo lo que falta en el día actual; nunca pisa lo que ya cargaste.
+export function mergeDay(mine, other) {
+  for (const [slot, items] of Object.entries(other.meals)) {
+    if (!(mine.meals[slot] || []).length && items.length) mine.meals[slot] = items;
+  }
+  for (const key of ['strength', 'cardio']) {
+    if (!mine[key].length && other[key].length) mine[key] = other[key];
+  }
+  for (const [id, taken] of Object.entries(other.supplements)) {
+    if (taken && !mine.supplements[id]) mine.supplements[id] = true;
+  }
+  for (const key of ['weight', 'steps', 'energy', 'hunger']) {
+    if (blank(mine[key]) && !blank(other[key])) mine[key] = other[key];
+  }
+  for (const key of ['max', 'total']) {
+    if (blank(mine.pushups[key]) && !blank(other.pushups[key])) mine.pushups[key] = other.pushups[key];
+  }
+  if (!mine.sleep.bed && !mine.sleep.wake && (other.sleep.bed || other.sleep.wake)) mine.sleep = other.sleep;
+  if (!(mine.notes || '').trim() && other.notes) mine.notes = other.notes;
+  if (other.cheat) mine.cheat = true;
+  return mine;
+}
+
 export function mergeStates(current, incoming) {
   for (const [iso, day] of Object.entries(incoming.days)) {
     if (!current.days[iso] || isDayEmpty(current.days[iso])) current.days[iso] = day;
+    else mergeDay(current.days[iso], day);
   }
+  const ids = new Set(current.templates.map((t) => t.id));
+  incoming.templates.forEach((t) => { if (!ids.has(t.id)) current.templates.push(t); });
   for (const [key, value] of Object.entries(incoming.profile)) {
     const mine = current.profile[key];
     if ((mine === null || mine === undefined || mine === '') && value !== null && value !== '') {

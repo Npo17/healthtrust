@@ -1,5 +1,5 @@
 import {
-  STORAGE_KEY, ensureDay, loadState, saveState,
+  STORAGE_KEY, ensureDay, loadState, mergeStates, normalizeState, saveState,
 } from './store.js';
 import { parseDuration, parseNum, setPath } from './utils.js';
 import * as dayView from './views/day.js';
@@ -201,9 +201,27 @@ document.addEventListener('visibilitychange', () => {
   if (document.visibilityState === 'hidden' && saveTimer) saveNow();
 });
 
+const SEED_VERSION = 1;
+
+async function loadHistory() {
+  if ((ctx.state.meta.seedVersion || 0) >= SEED_VERSION) return;
+  try {
+    const res = await fetch('data/historial.json', { cache: 'no-store' });
+    if (!res.ok) return;
+    mergeStates(ctx.state, normalizeState(await res.json()));
+    ctx.state.meta.seedVersion = SEED_VERSION;
+    saveNow();
+    render();
+    toast('Cargué tu historial de semanas anteriores.');
+  } catch (err) {
+    console.error(err);
+  }
+}
+
 parseRoute();
 render({ resetScroll: true });
 views[ctx.route].onEnter?.(ctx);
+loadHistory();
 
 if ('serviceWorker' in navigator && location.protocol === 'https:') {
   navigator.serviceWorker.register('./sw.js').catch(() => {});

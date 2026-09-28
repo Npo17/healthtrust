@@ -7,6 +7,8 @@ import {
   addDays, agoText, dateRange, esc, fmtDM, fmtDMY, fmtNum, fmtRange, isNum, isValidISO, parseNum, planWeek, round, todayISO, weekStart,
 } from '../utils.js';
 import { stat } from './shared.js';
+import { healthReport, levelOf } from '../health.js';
+import { bodyFigure } from '../body.js';
 
 function signed(n, decimals) {
   return `${n > 0 ? '+' : ''}${fmtNum(n, decimals)}`;
@@ -66,8 +68,32 @@ export function render(ctx) {
       <tbody>${progress.map((p) => `<tr><td>${esc(p.name)}</td><td>${exerciseCell(p.entries[0])}</td><td>${exerciseCell(p.entries[p.entries.length - 1])}</td><td>${p.bestKg !== null ? `${fmtNum(p.bestKg, 1)} kg` : '—'}</td></tr>`).join('')}</tbody>
     </table></div>` : '<p class="muted">Cuando cargues la misma rutina dos veces vas a ver acá cómo suben series, reps y kilos.</p>';
 
+  const report = healthReport(state, 14);
+  const order = Object.values(report.areas).sort((a, b) => (a.pct ?? -1) - (b.pct ?? -1));
+  const areaRow = (a) => {
+    const lvl = levelOf(a.pct);
+    const details = a.details.length ? `<div class="chips small-chips">${a.details.map((d) => `<span class="chip lvl-${levelOf(d.pct)}">${esc(d.name)} ${d.count}</span>`).join('')}</div>` : '';
+    return `<li class="area lvl-${lvl}">
+      <div class="area-head"><b>${esc(a.label)}</b><span class="area-pct">${a.pct === null ? 'sin datos' : `${a.pct}%`}</span></div>
+      <span class="bar"><i style="width:${a.pct ?? 0}%"></i></span>
+      <p class="muted small">${esc(a.status)}</p>
+      ${a.tip ? `<p class="area-tip">${esc(a.tip)}</p>` : ''}
+      ${details}
+    </li>`;
+  };
+
   return `
   <h1 class="page-title">Progreso</h1>
+  <section class="card">
+    <div class="card-head"><h2>Tu estado</h2><span class="muted small">últimos 14 días</span></div>
+    <div class="overall lvl-${levelOf(report.overall)}"><span class="overall-pct">${report.overall ?? '—'}%</span><span class="muted small">puntaje general</span></div>
+    ${bodyFigure(report)}
+    <p class="hint center-text">Verde: bien (80% o más) · Amarillo: a mejorar · Rojo: prioridad · Gris: faltan datos</p>
+  </section>
+  <section class="card">
+    <h2>Qué te falta mejorar</h2>
+    <ul class="areas">${order.map(areaRow).join('')}</ul>
+  </section>
   ${weightCard(state)}
   <section class="card">
     <div class="card-head"><h2>Cardio por semana</h2><span class="muted small">objetivo ${state.targets.cardioMinPerWeek} min</span></div>

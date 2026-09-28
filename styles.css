@@ -266,6 +266,43 @@ table.simple th { color: var(--muted); font-size: 12px; font-weight: 600; }
 .chart .bar { fill: #3a4d75; }
 .chart .bar.ok { fill: var(--accent-2); }
 
+.body-svg { display: block; width: 100%; max-width: 520px; height: auto; margin: 0 auto; }
+.body-parts g { opacity: 0.9; }
+.bl-name { fill: var(--muted); font-size: 13px; }
+.bl-pct { font-size: 22px; font-weight: 800; }
+.center-text { text-align: center; }
+.pad-text { padding: 0 14px 14px; }
+.overall { display: flex; flex-direction: column; align-items: center; margin: 2px 0 6px; }
+.overall-pct { font-size: 40px; font-weight: 800; line-height: 1.1; }
+.overall.lvl-good .overall-pct { color: var(--accent); }
+.overall.lvl-mid .overall-pct { color: var(--warn); }
+.overall.lvl-bad .overall-pct { color: var(--bad); }
+.areas { display: flex; flex-direction: column; gap: 8px; margin: 10px 0 0; padding: 0; list-style: none; }
+.area { padding: 10px 12px; background: var(--panel-2); border-left: 4px solid var(--line); border-radius: 10px; }
+.area-head { display: flex; justify-content: space-between; align-items: baseline; }
+.area-pct { font-weight: 800; }
+.area .bar { display: block; height: 5px; margin: 6px 0 2px; overflow: hidden; background: var(--bg); border-radius: 4px; }
+.area .bar i { display: block; height: 100%; background: var(--line); }
+.area-tip { margin: 6px 0 0; font-size: 14px; }
+.lvl-good { border-left-color: var(--accent); }
+.lvl-good .area-pct { color: var(--accent); }
+.lvl-good .bar i { background: var(--accent); }
+.lvl-mid { border-left-color: var(--warn); }
+.lvl-mid .area-pct { color: var(--warn); }
+.lvl-mid .bar i { background: var(--warn); }
+.lvl-bad { border-left-color: var(--bad); }
+.lvl-bad .area-pct { color: var(--bad); }
+.lvl-bad .bar i { background: var(--bad); }
+.chip.lvl-good { color: var(--accent); }
+.chip.lvl-mid { color: var(--warn); }
+.chip.lvl-bad { color: #fca5a5; }
+
+.quick { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0; }
+.quick .btn { flex: 1 1 150px; }
+.pending { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin: 4px 0 10px; font-size: 13px; }
+.pending .chip { border-color: rgba(245, 158, 11, 0.5); color: var(--warn); }
+.done-note { margin: 4px 0 10px; color: var(--accent); font-size: 13px; }
+
 .report { min-height: 340px; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 12.5px; line-height: 1.5; }
 .steps { margin: 8px 0 12px; padding-left: 22px; }
 .steps li { margin: 5px 0; }

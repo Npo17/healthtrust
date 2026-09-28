@@ -34,6 +34,19 @@ function statsHtml(ctx, day) {
     ${missing > 0 ? `<p class="stat-note">Estimado: ${missing} ${missing === 1 ? 'comida' : 'comidas'} sin gramos cargados.</p>` : ''}`;
 }
 
+function pendingHtml(ctx, day, iso) {
+  if (iso > todayISO()) return '';
+  const filled = (slot) => (day.meals[slot] || []).some((i) => i.text || i.protein != null || i.kcal != null);
+  const missing = [];
+  if (!filled('desayuno')) missing.push(['Desayuno', 'sec-comidas']);
+  if (!filled('almuerzo') && !filled('cena')) missing.push(['Almuerzo o cena', 'sec-comidas']);
+  if (ctx.state.supplements.some((s) => !day.supplements[s.id])) missing.push(['Suplementos', 'sec-suplementos']);
+  if (!day.strength.length && !day.cardio.length) missing.push(['Entreno', 'sec-fuerza']);
+  if (!day.sleep.bed || !day.sleep.wake) missing.push(['Sueño', 'sec-sueno']);
+  if (!missing.length) return '<p class="done-note">Día completo. Todo cargado.</p>';
+  return `<div class="pending"><span class="muted">Falta cargar:</span>${missing.map(([label, target]) => `<button class="chip" data-action="scroll-to" data-target="${target}">${label}</button>`).join('')}</div>`;
+}
+
 function mealsCard(ctx, day, base) {
   const slots = MEAL_SLOTS.map((slot) => {
     const items = day.meals[slot.id] || [];
@@ -62,8 +75,9 @@ function mealsCard(ctx, day, base) {
       <h2>Comidas</h2>
       <label class="toggle${day.cheat ? ' on' : ''}"><input type="checkbox" data-path="${base}.cheat"${day.cheat ? ' checked' : ''}> Permitido</label>
     </div>
-    <p class="hint">Gramos de proteína y kcal son opcionales y aproximados; las comidas frecuentes ya vienen estimadas.</p>
+    <p class="hint">Tocá un botón para sumar una comida frecuente: ya trae la proteína y las calorías estimadas.</p>
     ${slots}
+    <button class="link small" data-action="typical-save">Guardar las comidas y suplementos de este día como "Mi día típico"</button>
   </section>`;
 }
 
@@ -189,12 +203,17 @@ export function render(ctx) {
     ${iso !== today ? '<button class="btn ghost small" data-action="day-today">Ir a hoy</button>' : ''}
   </div>
   <div class="stats" data-live="day-stats">${statsHtml(ctx, day)}</div>
-  ${mealsCard(ctx, day, base)}
-  ${supplementsCard(ctx, day, base)}
-  ${strengthCard(ctx, day, base)}
-  ${cardioCard(ctx, day, base)}
-  ${sleepCard(ctx, day, base)}
-  ${bodyCard(ctx, day, base)}`;
+  <div class="quick">
+    <button class="btn" data-action="typical-load">Mi día típico</button>
+    <button class="btn ghost" data-action="yesterday-copy">Copiar comidas de ayer</button>
+  </div>
+  <div data-live="pending">${pendingHtml(ctx, day, iso)}</div>
+  <div id="sec-comidas">${mealsCard(ctx, day, base)}</div>
+  <div id="sec-suplementos">${supplementsCard(ctx, day, base)}</div>
+  <div id="sec-fuerza">${strengthCard(ctx, day, base)}</div>
+  <div id="sec-cardio">${cardioCard(ctx, day, base)}</div>
+  <div id="sec-sueno">${sleepCard(ctx, day, base)}</div>
+  <div id="sec-cuerpo">${bodyCard(ctx, day, base)}</div>`;
 }
 
 function dayOf(ctx) {
@@ -210,7 +229,46 @@ function lastSession(state, before, routineId) {
   return null;
 }
 
+function fillEmptySlots(day, meals) {
+  let added = 0;
+  for (const [slot, items] of Object.entries(meals || {})) {
+    if ((day.meals[slot] || []).length || !items.length) continue;
+    day.meals[slot] = items.map((i) => ({ id: uid(), text: i.text, protein: i.protein ?? null, kcal: i.kcal ?? null }));
+    added += items.length;
+  }
+  return added;
+}
+
 export const actions = {
+  'scroll-to': (el) => document.getElementById(el.dataset.target)?.scrollIntoView({ behavior: 'smooth', block: 'start' }),
+  'typical-load': (el, ctx) => {
+    const day = dayOf(ctx);
+    const { typical } = ctx.state;
+    const added = fillEmptySlots(day, typical.meals);
+    Object.entries(typical.supplements || {}).forEach(([id, on]) => { if (on) day.supplements[id] = true; });
+    ctx.commit();
+    ctx.toast(added ? 'Listo: cargué tu día típico. Cambiá solo lo distinto.' : 'Esas comidas ya estaban cargadas; marqué los suplementos.');
+  },
+  'typical-save': (el, ctx) => {
+    const day = dayOf(ctx);
+    const meals = {};
+    Object.entries(day.meals).forEach(([slot, items]) => {
+      const kept = items.filter((i) => i.text).map((i) => ({ text: i.text, protein: i.protein, kcal: i.kcal }));
+      if (kept.length) meals[slot] = kept;
+    });
+    if (!Object.keys(meals).length) { ctx.toast('Primero cargá las comidas de este día.'); return; }
+    ctx.state.typical = { meals, supplements: { ...day.supplements } };
+    ctx.commit();
+    ctx.toast('Guardado como tu día típico.');
+  },
+  'yesterday-copy': (el, ctx) => {
+    const prev = ctx.state.days[addDays(currentDate(ctx), -1)];
+    const added = prev ? fillEmptySlots(dayOf(ctx), prev.meals) : 0;
+    if (!added) { ctx.toast('No hay comidas de ayer para copiar (o ya cargaste esas comidas).'); return; }
+    ctx.commit();
+    ctx.toast('Copié las comidas de ayer en las comidas vacías.');
+  },
+
   'day-nav': (el, ctx) => ctx.go('hoy', { d: addDays(currentDate(ctx), Number(el.dataset.delta)) }),
   'day-today': (el, ctx) => ctx.go('hoy'),
   'day-go': (el, ctx) => { if (isValidISO(el.value)) ctx.go('hoy', { d: el.value }); },

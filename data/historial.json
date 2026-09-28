@@ -1,0 +1,1718 @@
+{
+  "version": 1,
+  "profile": {
+    "name": "",
+    "heightCm": 171,
+    "age": 23,
+    "sex": "M",
+    "goalWeightKg": 78,
+    "planStart": "2026-05-18"
+  },
+  "days": {
+    "2026-06-19": {
+      "meals": {
+        "desayuno": [],
+        "almuerzo": [],
+        "merienda": [],
+        "post": [],
+        "cena": [],
+        "snacks": []
+      },
+      "cheat": false,
+      "supplements": {},
+      "strength": [],
+      "cardio": [],
+      "pushups": {
+        "max": null,
+        "total": null
+      },
+      "sleep": {
+        "bed": "",
+        "wake": "",
+        "hours": null,
+        "quality": null,
+        "napMin": null,
+        "score": null,
+        "source": ""
+      },
+      "weight": 87.6,
+      "steps": null,
+      "energy": null,
+      "hunger": null,
+      "notes": "Pesaje en ayunas después de ir al baño."
+    },
+    "2026-06-26": {
+      "meals": {
+        "desayuno": [],
+        "almuerzo": [],
+        "merienda": [],
+        "post": [],
+        "cena": [],
+        "snacks": []
+      },
+      "cheat": false,
+      "supplements": {},
+      "strength": [],
+      "cardio": [],
+      "pushups": {
+        "max": 44,
+        "total": null
+      },
+      "sleep": {
+        "bed": "",
+        "wake": "",
+        "hours": null,
+        "quality": null,
+        "napMin": null,
+        "score": null,
+        "source": ""
+      },
+      "weight": null,
+      "steps": null,
+      "energy": null,
+      "hunger": null,
+      "notes": ""
+    },
+    "2026-06-27": {
+      "meals": {
+        "desayuno": [],
+        "almuerzo": [],
+        "merienda": [],
+        "post": [],
+        "cena": [],
+        "snacks": []
+      },
+      "cheat": false,
+      "supplements": {},
+      "strength": [],
+      "cardio": [],
+      "pushups": {
+        "max": null,
+        "total": null
+      },
+      "sleep": {
+        "bed": "",
+        "wake": "",
+        "hours": null,
+        "quality": null,
+        "napMin": null,
+        "score": null,
+        "source": ""
+      },
+      "weight": 86.95,
+      "steps": null,
+      "energy": null,
+      "hunger": null,
+      "notes": ""
+    },
+    "2026-07-06": {
+      "meals": {
+        "desayuno": [],
+        "almuerzo": [],
+        "merienda": [],
+        "post": [],
+        "cena": [],
+        "snacks": []
+      },
+      "cheat": false,
+      "supplements": {},
+      "strength": [],
+      "cardio": [],
+      "pushups": {
+        "max": 54,
+        "total": null
+      },
+      "sleep": {
+        "bed": "",
+        "wake": "",
+        "hours": null,
+        "quality": null,
+        "napMin": null,
+        "score": null,
+        "source": ""
+      },
+      "weight": null,
+      "steps": null,
+      "energy": null,
+      "hunger": null,
+      "notes": ""
+    },
+    "2026-07-07": {
+      "meals": {
+        "desayuno": [],
+        "almuerzo": [],
+        "merienda": [],
+        "post": [],
+        "cena": [],
+        "snacks": []
+      },
+      "cheat": false,
+      "supplements": {},
+      "strength": [],
+      "cardio": [],
+      "pushups": {
+        "max": 55,
+        "total": null
+      },
+      "sleep": {
+        "bed": "",
+        "wake": "",
+        "hours": null,
+        "quality": null,
+        "napMin": null,
+        "score": null,
+        "source": ""
+      },
+      "weight": null,
+      "steps": null,
+      "energy": null,
+      "hunger": null,
+      "notes": ""
+    },
+    "2026-07-08": {
+      "meals": {
+        "desayuno": [],
+        "almuerzo": [],
+        "merienda": [],
+        "post": [],
+        "cena": [],
+        "snacks": []
+      },
+      "cheat": false,
+      "supplements": {},
+      "strength": [],
+      "cardio": [],
+      "pushups": {
+        "max": 45,
+        "total": 56
+      },
+      "sleep": {
+        "bed": "",
+        "wake": "",
+        "hours": null,
+        "quality": null,
+        "napMin": null,
+        "score": null,
+        "source": ""
+      },
+      "weight": null,
+      "steps": null,
+      "energy": null,
+      "hunger": null,
+      "notes": ""
+    },
+    "2026-07-09": {
+      "meals": {
+        "desayuno": [],
+        "almuerzo": [],
+        "merienda": [],
+        "post": [],
+        "cena": [],
+        "snacks": []
+      },
+      "cheat": false,
+      "supplements": {},
+      "strength": [],
+      "cardio": [],
+      "pushups": {
+        "max": 57,
+        "total": null
+      },
+      "sleep": {
+        "bed": "",
+        "wake": "",
+        "hours": null,
+        "quality": null,
+        "napMin": null,
+        "score": null,
+        "source": ""
+      },
+      "weight": null,
+      "steps": null,
+      "energy": null,
+      "hunger": null,
+      "notes": ""
+    },
+    "2026-09-05": {
+      "meals": {
+        "desayuno": [],
+        "almuerzo": [],
+        "merienda": [],
+        "post": [],
+        "cena": [],
+        "snacks": []
+      },
+      "cheat": false,
+      "supplements": {},
+      "strength": [],
+      "cardio": [],
+      "pushups": {
+        "max": null,
+        "total": null
+      },
+      "sleep": {
+        "bed": "",
+        "wake": "",
+        "hours": null,
+        "quality": null,
+        "napMin": null,
+        "score": null,
+        "source": ""
+      },
+      "weight": 83.1,
+      "steps": null,
+      "energy": null,
+      "hunger": null,
+      "notes": ""
+    },
+    "2026-09-12": {
+      "meals": {
+        "desayuno": [],
+        "almuerzo": [],
+        "merienda": [],
+        "post": [],
+        "cena": [],
+        "snacks": []
+      },
+      "cheat": false,
+      "supplements": {},
+      "strength": [],
+      "cardio": [],
+      "pushups": {
+        "max": null,
+        "total": null
+      },
+      "sleep": {
+        "bed": "",
+        "wake": "",
+        "hours": null,
+        "quality": null,
+        "napMin": null,
+        "score": null,
+        "source": ""
+      },
+      "weight": 83.45,
+      "steps": null,
+      "energy": null,
+      "hunger": null,
+      "notes": ""
+    },
+    "2026-09-14": {
+      "meals": {
+        "desayuno": [
+          {
+            "id": "seed1",
+            "text": "Café negro",
+            "protein": 0,
+            "kcal": 5
+          },
+          {
+            "id": "seed2",
+            "text": "1 tostada integral + queso crema light + 2 huevos revueltos + 130 g de carne + coca zero",
+            "protein": 50,
+            "kcal": 520
+          }
+        ],
+        "almuerzo": [],
+        "merienda": [
+          {
+            "id": "seed3",
+            "text": "Café negro",
+            "protein": 0,
+            "kcal": 5
+          }
+        ],
+        "post": [
+          {
+            "id": "seed4",
+            "text": "Yogur griego natural (20 g prot) + 1 scoop de whey",
+            "protein": 45,
+            "kcal": 320
+          }
+        ],
+        "cena": [
+          {
+            "id": "seed5",
+            "text": "Tarta de pollo",
+            "protein": null,
+            "kcal": null
+          }
+        ],
+        "snacks": []
+      },
+      "cheat": false,
+      "supplements": {
+        "multi": true,
+        "omega3": true,
+        "creatina": true,
+        "colageno": true,
+        "magnesio": true
+      },
+      "strength": [
+        {
+          "id": "seed6",
+          "routineId": "pierna",
+          "name": "Pierna",
+          "notes": "",
+          "exercises": [
+            {
+              "name": "Sentadilla libre",
+              "sets": 5,
+              "reps": "10",
+              "kg": ""
+            },
+            {
+              "name": "Sentadilla búlgara con mancuernas",
+              "sets": 3,
+              "reps": "13",
+              "kg": ""
+            },
+            {
+              "name": "Peso muerto rumano",
+              "sets": 3,
+              "reps": "12",
+              "kg": ""
+            },
+            {
+              "name": "Zancadas caminando",
+              "sets": 2,
+              "reps": "13 c/pierna",
+              "kg": ""
+            },
+            {
+              "name": "Hip thrust con barra",
+              "sets": 4,
+              "reps": "11",
+              "kg": ""
+            },
+            {
+              "name": "Elevación de talones con barra",
+              "sets": 3,
+              "reps": "20",
+              "kg": ""
+            }
+          ]
+        }
+      ],
+      "cardio": [
+        {
+          "id": "seed7",
+          "type": "bici",
+          "minutes": 30,
+          "kcal": null,
+          "hr": null
+        }
+      ],
+      "pushups": {
+        "max": null,
+        "total": null
+      },
+      "sleep": {
+        "bed": "",
+        "wake": "",
+        "hours": null,
+        "quality": null,
+        "napMin": null,
+        "score": null,
+        "source": ""
+      },
+      "weight": null,
+      "steps": null,
+      "energy": null,
+      "hunger": null,
+      "notes": ""
+    },
+    "2026-09-15": {
+      "meals": {
+        "desayuno": [
+          {
+            "id": "seed8",
+            "text": "Café negro",
+            "protein": 0,
+            "kcal": 5
+          }
+        ],
+        "almuerzo": [
+          {
+            "id": "seeda",
+            "text": "2 tostadas integrales + queso crema light + 145 g de carne + 1 porción de queso proteico",
+            "protein": 52,
+            "kcal": 540
+          }
+        ],
+        "merienda": [
+          {
+            "id": "seedb",
+            "text": "Café negro",
+            "protein": 0,
+            "kcal": 5
+          }
+        ],
+        "post": [
+          {
+            "id": "seed9",
+            "text": "2 yogures griegos medianos (24 g prot entre ambos) + 1 scoop de whey",
+            "protein": 49,
+            "kcal": 360
+          }
+        ],
+        "cena": [
+          {
+            "id": "seedc",
+            "text": "Fideos proteicos + verduras (cebolla, zanahoria) + carne en trozos",
+            "protein": 45,
+            "kcal": 620
+          }
+        ],
+        "snacks": []
+      },
+      "cheat": false,
+      "supplements": {
+        "multi": true,
+        "omega3": true,
+        "creatina": true,
+        "colageno": true,
+        "magnesio": true
+      },
+      "strength": [
+        {
+          "id": "seedd",
+          "routineId": "tiron",
+          "name": "Tirón (espalda + bíceps)",
+          "notes": "",
+          "exercises": [
+            {
+              "name": "Remo con barra",
+              "sets": 6,
+              "reps": "12",
+              "kg": ""
+            },
+            {
+              "name": "Remo inclinado con mancuernas",
+              "sets": 5,
+              "reps": "13",
+              "kg": ""
+            },
+            {
+              "name": "Curl con barra Z",
+              "sets": 4,
+              "reps": "13",
+              "kg": ""
+            },
+            {
+              "name": "Curl inclinado con mancuernas",
+              "sets": 3,
+              "reps": "16",
+              "kg": ""
+            },
+            {
+              "name": "Face pulls / vuelos posteriores",
+              "sets": 3,
+              "reps": "18",
+              "kg": ""
+            }
+          ]
+        }
+      ],
+      "cardio": [
+        {
+          "id": "seede",
+          "type": "bici",
+          "minutes": 30,
+          "kcal": null,
+          "hr": null
+        }
+      ],
+      "pushups": {
+        "max": null,
+        "total": null
+      },
+      "sleep": {
+        "bed": "",
+        "wake": "",
+        "hours": null,
+        "quality": null,
+        "napMin": null,
+        "score": null,
+        "source": ""
+      },
+      "weight": null,
+      "steps": null,
+      "energy": null,
+      "hunger": null,
+      "notes": "Cena a la 1:30 de la mañana: terminé tarde la migración en producción."
+    },
+    "2026-09-16": {
+      "meals": {
+        "desayuno": [
+          {
+            "id": "seedf",
+            "text": "Café negro",
+            "protein": 0,
+            "kcal": 5
+          }
+        ],
+        "almuerzo": [
+          {
+            "id": "seedg",
+            "text": "Fideos proteicos + verduras (cebolla, zanahoria) + carne en trozos",
+            "protein": 45,
+            "kcal": 620
+          }
+        ],
+        "merienda": [
+          {
+            "id": "seedh",
+            "text": "Café negro",
+            "protein": 0,
+            "kcal": 5
+          }
+        ],
+        "post": [
+          {
+            "id": "seedi",
+            "text": "2 yogures griegos medianos (24 g prot entre ambos) + 1 scoop de whey",
+            "protein": 49,
+            "kcal": 360
+          }
+        ],
+        "cena": [
+          {
+            "id": "seedj",
+            "text": "Empanadas de pollo, atún y queso + 2 porciones de pizza de pollo",
+            "protein": null,
+            "kcal": null
+          }
+        ],
+        "snacks": []
+      },
+      "cheat": false,
+      "supplements": {
+        "multi": true,
+        "omega3": true,
+        "creatina": true,
+        "colageno": true,
+        "magnesio": true
+      },
+      "strength": [
+        {
+          "id": "seedk",
+          "routineId": "brazos",
+          "name": "Brazos + core",
+          "notes": "",
+          "exercises": [
+            {
+              "name": "Curl martillo",
+              "sets": 3,
+              "reps": "16",
+              "kg": ""
+            },
+            {
+              "name": "Curl banco Scott",
+              "sets": 3,
+              "reps": "18",
+              "kg": ""
+            },
+            {
+              "name": "Extensión de tríceps sobre la cabeza",
+              "sets": 3,
+              "reps": "15",
+              "kg": ""
+            },
+            {
+              "name": "Patada de tríceps",
+              "sets": 3,
+              "reps": "18",
+              "kg": ""
+            },
+            {
+              "name": "Crunch declinado con carga",
+              "sets": 3,
+              "reps": "16",
+              "kg": ""
+            },
+            {
+              "name": "Plancha con carga / dead bugs",
+              "sets": 4,
+              "reps": "16",
+              "kg": ""
+            },
+            {
+              "name": "Lumbares",
+              "sets": 4,
+              "reps": "10",
+              "kg": ""
+            }
+          ]
+        }
+      ],
+      "cardio": [],
+      "pushups": {
+        "max": null,
+        "total": null
+      },
+      "sleep": {
+        "bed": "",
+        "wake": "",
+        "hours": null,
+        "quality": null,
+        "napMin": null,
+        "score": null,
+        "source": ""
+      },
+      "weight": null,
+      "steps": null,
+      "energy": null,
+      "hunger": null,
+      "notes": ""
+    },
+    "2026-09-17": {
+      "meals": {
+        "desayuno": [
+          {
+            "id": "seedl",
+            "text": "Café negro",
+            "protein": 0,
+            "kcal": 5
+          }
+        ],
+        "almuerzo": [
+          {
+            "id": "seedm",
+            "text": "2 empanadas de pollo",
+            "protein": 20,
+            "kcal": 560
+          }
+        ],
+        "merienda": [
+          {
+            "id": "seedn",
+            "text": "Café negro",
+            "protein": 0,
+            "kcal": 5
+          }
+        ],
+        "post": [
+          {
+            "id": "seedo",
+            "text": "Yogur griego natural (20 g prot) + 1 scoop y medio de whey",
+            "protein": 57,
+            "kcal": 395
+          }
+        ],
+        "cena": [
+          {
+            "id": "seedq",
+            "text": "Entraña a la chapa con papas rústicas y tomates cherry",
+            "protein": null,
+            "kcal": null
+          }
+        ],
+        "snacks": [
+          {
+            "id": "seedp",
+            "text": "Pororó (cine) + coca zero",
+            "protein": 3,
+            "kcal": 400
+          }
+        ]
+      },
+      "cheat": false,
+      "supplements": {
+        "multi": true,
+        "omega3": true,
+        "creatina": true,
+        "colageno": true,
+        "magnesio": true
+      },
+      "strength": [
+        {
+          "id": "seedr",
+          "routineId": "full",
+          "name": "Full body",
+          "notes": "",
+          "exercises": [
+            {
+              "name": "Peso muerto convencional / rack pull",
+              "sets": 4,
+              "reps": "10",
+              "kg": ""
+            },
+            {
+              "name": "Sentadilla búlgara",
+              "sets": 3,
+              "reps": "13",
+              "kg": ""
+            },
+            {
+              "name": "Remo con mancuerna a una mano",
+              "sets": 3,
+              "reps": "14",
+              "kg": ""
+            },
+            {
+              "name": "Press inclinado con mancuernas",
+              "sets": 3,
+              "reps": "14",
+              "kg": ""
+            },
+            {
+              "name": "Curl con barra Z",
+              "sets": 4,
+              "reps": "15",
+              "kg": ""
+            },
+            {
+              "name": "Farmer hold",
+              "sets": 4,
+              "reps": "40 s",
+              "kg": ""
+            }
+          ]
+        }
+      ],
+      "cardio": [
+        {
+          "id": "seeds",
+          "type": "bici",
+          "minutes": 30,
+          "kcal": null,
+          "hr": null
+        }
+      ],
+      "pushups": {
+        "max": null,
+        "total": null
+      },
+      "sleep": {
+        "bed": "",
+        "wake": "",
+        "hours": null,
+        "quality": null,
+        "napMin": null,
+        "score": null,
+        "source": ""
+      },
+      "weight": null,
+      "steps": null,
+      "energy": null,
+      "hunger": null,
+      "notes": "Colágeno tomado más tarde, no en el desayuno."
+    },
+    "2026-09-18": {
+      "meals": {
+        "desayuno": [
+          {
+            "id": "seedt",
+            "text": "Café negro",
+            "protein": 0,
+            "kcal": 5
+          },
+          {
+            "id": "seedu",
+            "text": "1 tostada integral + queso crema light + 2 huevos revueltos + pollo + queso proteico",
+            "protein": 56,
+            "kcal": 495
+          }
+        ],
+        "almuerzo": [],
+        "merienda": [
+          {
+            "id": "seedv",
+            "text": "Café negro helado",
+            "protein": 0,
+            "kcal": 5
+          }
+        ],
+        "post": [],
+        "cena": [
+          {
+            "id": "seedw",
+            "text": "Vacío con papas bastón + entrada de chinchulines + coca zero (parrilla)",
+            "protein": null,
+            "kcal": null
+          }
+        ],
+        "snacks": []
+      },
+      "cheat": true,
+      "supplements": {
+        "multi": true,
+        "omega3": true,
+        "creatina": true,
+        "colageno": true,
+        "magnesio": true
+      },
+      "strength": [],
+      "cardio": [],
+      "pushups": {
+        "max": null,
+        "total": null
+      },
+      "sleep": {
+        "bed": "",
+        "wake": "",
+        "hours": null,
+        "quality": null,
+        "napMin": null,
+        "score": null,
+        "source": ""
+      },
+      "weight": null,
+      "steps": null,
+      "energy": null,
+      "hunger": null,
+      "notes": "Nació mi sobrino, no pude entrenar."
+    },
+    "2026-09-19": {
+      "meals": {
+        "desayuno": [
+          {
+            "id": "seedx",
+            "text": "2 tostadas integrales + queso crema light + 2 huevos revueltos",
+            "protein": 21,
+            "kcal": 310
+          },
+          {
+            "id": "seedy",
+            "text": "Café negro",
+            "protein": 0,
+            "kcal": 5
+          }
+        ],
+        "almuerzo": [],
+        "merienda": [
+          {
+            "id": "seedz",
+            "text": "Café negro helado",
+            "protein": 0,
+            "kcal": 5
+          }
+        ],
+        "post": [
+          {
+            "id": "seed10",
+            "text": "2 yogures griegos (20 g prot) + 2 scoops de whey",
+            "protein": 70,
+            "kcal": 500
+          }
+        ],
+        "cena": [],
+        "snacks": []
+      },
+      "cheat": false,
+      "supplements": {
+        "multi": true,
+        "omega3": true,
+        "creatina": true,
+        "colageno": true,
+        "magnesio": true
+      },
+      "strength": [
+        {
+          "id": "seed11",
+          "routineId": "empuje",
+          "name": "Empuje (pecho + hombro + tríceps)",
+          "notes": "",
+          "exercises": [
+            {
+              "name": "Press banca plano con barra",
+              "sets": 6,
+              "reps": "10",
+              "kg": ""
+            },
+            {
+              "name": "Press inclinado con mancuernas",
+              "sets": 3,
+              "reps": "12",
+              "kg": ""
+            },
+            {
+              "name": "Fondos en paralelas",
+              "sets": 3,
+              "reps": "13",
+              "kg": ""
+            },
+            {
+              "name": "Press militar con barra",
+              "sets": 5,
+              "reps": "7",
+              "kg": ""
+            },
+            {
+              "name": "Elevaciones laterales con mancuernas",
+              "sets": 3,
+              "reps": "16",
+              "kg": ""
+            },
+            {
+              "name": "Press francés con barra Z",
+              "sets": 3,
+              "reps": "13",
+              "kg": ""
+            }
+          ]
+        }
+      ],
+      "cardio": [
+        {
+          "id": "seed12",
+          "type": "bici",
+          "minutes": 30,
+          "kcal": null,
+          "hr": null
+        }
+      ],
+      "pushups": {
+        "max": null,
+        "total": null
+      },
+      "sleep": {
+        "bed": "",
+        "wake": "",
+        "hours": null,
+        "quality": null,
+        "napMin": null,
+        "score": null,
+        "source": ""
+      },
+      "weight": null,
+      "steps": null,
+      "energy": null,
+      "hunger": null,
+      "notes": ""
+    },
+    "2026-09-20": {
+      "meals": {
+        "desayuno": [
+          {
+            "id": "seed13",
+            "text": "2 tostadas integrales + queso crema light + 2 huevos revueltos",
+            "protein": 21,
+            "kcal": 310
+          },
+          {
+            "id": "seed14",
+            "text": "Café negro",
+            "protein": 0,
+            "kcal": 5
+          }
+        ],
+        "almuerzo": [],
+        "merienda": [
+          {
+            "id": "seed15",
+            "text": "Café negro helado",
+            "protein": 0,
+            "kcal": 5
+          }
+        ],
+        "post": [],
+        "cena": [
+          {
+            "id": "seed16",
+            "text": "2 choripanes",
+            "protein": null,
+            "kcal": null
+          }
+        ],
+        "snacks": []
+      },
+      "cheat": true,
+      "supplements": {
+        "multi": true,
+        "omega3": true,
+        "creatina": true,
+        "colageno": true,
+        "magnesio": true
+      },
+      "strength": [],
+      "cardio": [],
+      "pushups": {
+        "max": null,
+        "total": null
+      },
+      "sleep": {
+        "bed": "",
+        "wake": "",
+        "hours": null,
+        "quality": null,
+        "napMin": null,
+        "score": null,
+        "source": ""
+      },
+      "weight": null,
+      "steps": null,
+      "energy": null,
+      "hunger": null,
+      "notes": "Descanso."
+    },
+    "2026-09-21": {
+      "meals": {
+        "desayuno": [
+          {
+            "id": "seed17",
+            "text": "Café negro",
+            "protein": 0,
+            "kcal": 5
+          },
+          {
+            "id": "seed18",
+            "text": "2 tostadas integrales + queso crema light + 2 huevos revueltos + 1 porción de queso proteico + 1/4 palta",
+            "protein": 29,
+            "kcal": 460
+          }
+        ],
+        "almuerzo": [],
+        "merienda": [
+          {
+            "id": "seed19",
+            "text": "Café negro",
+            "protein": 0,
+            "kcal": 5
+          }
+        ],
+        "post": [
+          {
+            "id": "seed1a",
+            "text": "Yogur griego natural (20 g prot) + 2 scoops de whey",
+            "protein": 70,
+            "kcal": 465
+          }
+        ],
+        "cena": [
+          {
+            "id": "seed1b",
+            "text": "Pollo con zanahoria y huevo",
+            "protein": 60,
+            "kcal": 420
+          }
+        ],
+        "snacks": []
+      },
+      "cheat": false,
+      "supplements": {
+        "multi": true,
+        "omega3": true,
+        "creatina": true,
+        "colageno": true,
+        "magnesio": true
+      },
+      "strength": [
+        {
+          "id": "seed1c",
+          "routineId": "tiron",
+          "name": "Tirón (espalda + bíceps)",
+          "notes": "",
+          "exercises": [
+            {
+              "name": "Remo con barra",
+              "sets": 7,
+              "reps": "12",
+              "kg": ""
+            },
+            {
+              "name": "Remo inclinado con mancuernas",
+              "sets": 5,
+              "reps": "14",
+              "kg": ""
+            },
+            {
+              "name": "Curl con barra Z",
+              "sets": 4,
+              "reps": "14",
+              "kg": ""
+            },
+            {
+              "name": "Curl inclinado con mancuernas",
+              "sets": 3,
+              "reps": "17",
+              "kg": ""
+            },
+            {
+              "name": "Face pulls / vuelos posteriores",
+              "sets": 3,
+              "reps": "18",
+              "kg": ""
+            }
+          ]
+        }
+      ],
+      "cardio": [
+        {
+          "id": "seed1d",
+          "type": "bici",
+          "minutes": 35,
+          "kcal": null,
+          "hr": null
+        }
+      ],
+      "pushups": {
+        "max": null,
+        "total": null
+      },
+      "sleep": {
+        "bed": "",
+        "wake": "",
+        "hours": null,
+        "quality": null,
+        "napMin": null,
+        "score": null,
+        "source": ""
+      },
+      "weight": null,
+      "steps": null,
+      "energy": null,
+      "hunger": null,
+      "notes": ""
+    },
+    "2026-09-22": {
+      "meals": {
+        "desayuno": [
+          {
+            "id": "seed1e",
+            "text": "Café negro",
+            "protein": 0,
+            "kcal": 5
+          },
+          {
+            "id": "seed1f",
+            "text": "2 tostadas integrales + queso crema light + 2 huevos revueltos + pollo + zanahoria",
+            "protein": 52,
+            "kcal": 500
+          }
+        ],
+        "almuerzo": [],
+        "merienda": [
+          {
+            "id": "seed1g",
+            "text": "Café negro",
+            "protein": 0,
+            "kcal": 5
+          }
+        ],
+        "post": [
+          {
+            "id": "seed1h",
+            "text": "Yogur griego natural (20 g prot) + 1 scoop y medio de whey",
+            "protein": 57,
+            "kcal": 395
+          }
+        ],
+        "cena": [
+          {
+            "id": "seed1i",
+            "text": "Pollo con zanahoria + 1 lata de atún + 1 porción de queso proteico + 1 tostada integral",
+            "protein": 88,
+            "kcal": 560
+          }
+        ],
+        "snacks": []
+      },
+      "cheat": false,
+      "supplements": {
+        "multi": true,
+        "omega3": true,
+        "creatina": true,
+        "colageno": true,
+        "magnesio": true
+      },
+      "strength": [
+        {
+          "id": "seed1j",
+          "routineId": "brazos",
+          "name": "Brazos + core",
+          "notes": "",
+          "exercises": [
+            {
+              "name": "Curl martillo",
+              "sets": 3,
+              "reps": "17",
+              "kg": ""
+            },
+            {
+              "name": "Curl banco Scott",
+              "sets": 3,
+              "reps": "18",
+              "kg": ""
+            },
+            {
+              "name": "Extensión de tríceps sobre la cabeza",
+              "sets": 3,
+              "reps": "15",
+              "kg": ""
+            },
+            {
+              "name": "Patada de tríceps",
+              "sets": 3,
+              "reps": "18",
+              "kg": ""
+            },
+            {
+              "name": "Crunch declinado con carga",
+              "sets": 3,
+              "reps": "16",
+              "kg": ""
+            },
+            {
+              "name": "Plancha con carga / dead bugs",
+              "sets": 4,
+              "reps": "16",
+              "kg": ""
+            },
+            {
+              "name": "Lumbares",
+              "sets": 4,
+              "reps": "10",
+              "kg": ""
+            }
+          ]
+        }
+      ],
+      "cardio": [
+        {
+          "id": "seed1k",
+          "type": "bici",
+          "minutes": 40,
+          "kcal": null,
+          "hr": null
+        }
+      ],
+      "pushups": {
+        "max": null,
+        "total": null
+      },
+      "sleep": {
+        "bed": "",
+        "wake": "",
+        "hours": null,
+        "quality": null,
+        "napMin": null,
+        "score": null,
+        "source": ""
+      },
+      "weight": null,
+      "steps": null,
+      "energy": null,
+      "hunger": null,
+      "notes": ""
+    },
+    "2026-09-23": {
+      "meals": {
+        "desayuno": [
+          {
+            "id": "seed1l",
+            "text": "Café negro",
+            "protein": 0,
+            "kcal": 5
+          },
+          {
+            "id": "seed1m",
+            "text": "2 tostadas integrales + queso crema light + 2 huevos revueltos + pollo + zanahoria",
+            "protein": 52,
+            "kcal": 500
+          }
+        ],
+        "almuerzo": [],
+        "merienda": [
+          {
+            "id": "seed1n",
+            "text": "Café negro",
+            "protein": 0,
+            "kcal": 5
+          }
+        ],
+        "post": [
+          {
+            "id": "seed1o",
+            "text": "Yogur griego natural (20 g prot) + 1 scoop de whey",
+            "protein": 45,
+            "kcal": 320
+          }
+        ],
+        "cena": [
+          {
+            "id": "seed1p",
+            "text": "Pollo con zanahoria",
+            "protein": 56,
+            "kcal": 330
+          }
+        ],
+        "snacks": [
+          {
+            "id": "seed1q",
+            "text": "Yogur griego natural (20 g prot) + 1 scoop de whey + 1 cuadradito de chocolate",
+            "protein": 45,
+            "kcal": 350
+          }
+        ]
+      },
+      "cheat": false,
+      "supplements": {
+        "multi": true,
+        "omega3": true,
+        "creatina": true,
+        "colageno": true,
+        "magnesio": true
+      },
+      "strength": [
+        {
+          "id": "seed1r",
+          "routineId": "full",
+          "name": "Full body",
+          "notes": "",
+          "exercises": [
+            {
+              "name": "Peso muerto convencional / rack pull",
+              "sets": 4,
+              "reps": "10",
+              "kg": ""
+            },
+            {
+              "name": "Sentadilla búlgara",
+              "sets": 3,
+              "reps": "13",
+              "kg": ""
+            },
+            {
+              "name": "Remo con mancuerna a una mano",
+              "sets": 3,
+              "reps": "14",
+              "kg": ""
+            },
+            {
+              "name": "Press inclinado con mancuernas",
+              "sets": 3,
+              "reps": "14",
+              "kg": ""
+            },
+            {
+              "name": "Curl con barra Z",
+              "sets": 4,
+              "reps": "15",
+              "kg": ""
+            },
+            {
+              "name": "Farmer hold",
+              "sets": 4,
+              "reps": "40 s",
+              "kg": ""
+            }
+          ]
+        }
+      ],
+      "cardio": [
+        {
+          "id": "seed1s",
+          "type": "bici",
+          "minutes": 30,
+          "kcal": null,
+          "hr": null
+        }
+      ],
+      "pushups": {
+        "max": null,
+        "total": null
+      },
+      "sleep": {
+        "bed": "",
+        "wake": "",
+        "hours": null,
+        "quality": null,
+        "napMin": null,
+        "score": null,
+        "source": ""
+      },
+      "weight": null,
+      "steps": null,
+      "energy": null,
+      "hunger": null,
+      "notes": "Ataque de dulce a la noche: lo resolví con yogur + scoop + 1 cuadradito de chocolate en vez de helado."
+    },
+    "2026-09-24": {
+      "meals": {
+        "desayuno": [
+          {
+            "id": "seed1t",
+            "text": "Café negro",
+            "protein": 0,
+            "kcal": 5
+          },
+          {
+            "id": "seed1u",
+            "text": "2 tostadas integrales + queso crema light + 2 huevos revueltos + pollo + zanahoria",
+            "protein": 52,
+            "kcal": 500
+          }
+        ],
+        "almuerzo": [],
+        "merienda": [
+          {
+            "id": "seed1v",
+            "text": "Café negro",
+            "protein": 0,
+            "kcal": 5
+          }
+        ],
+        "post": [
+          {
+            "id": "seed1w",
+            "text": "Yogur griego natural (20 g prot) + 1 scoop y medio de whey",
+            "protein": 57,
+            "kcal": 395
+          }
+        ],
+        "cena": [
+          {
+            "id": "seed1x",
+            "text": "Tostadas integrales + queso crema light + 2 huevos revueltos + pollo + zanahoria + lechuga",
+            "protein": 52,
+            "kcal": 505
+          }
+        ],
+        "snacks": []
+      },
+      "cheat": false,
+      "supplements": {
+        "multi": true,
+        "omega3": true,
+        "creatina": true,
+        "magnesio": true
+      },
+      "strength": [
+        {
+          "id": "seed1y",
+          "routineId": "pierna",
+          "name": "Pierna",
+          "notes": "",
+          "exercises": [
+            {
+              "name": "Sentadilla libre",
+              "sets": 5,
+              "reps": "10",
+              "kg": ""
+            },
+            {
+              "name": "Sentadilla búlgara con mancuernas",
+              "sets": 3,
+              "reps": "13",
+              "kg": ""
+            },
+            {
+              "name": "Peso muerto rumano",
+              "sets": 3,
+              "reps": "12",
+              "kg": ""
+            },
+            {
+              "name": "Zancadas caminando",
+              "sets": 2,
+              "reps": "13 c/pierna",
+              "kg": ""
+            },
+            {
+              "name": "Encogimiento de hombros con barra",
+              "sets": 4,
+              "reps": "11",
+              "kg": ""
+            },
+            {
+              "name": "Elevación de talones con barra",
+              "sets": 3,
+              "reps": "20",
+              "kg": ""
+            }
+          ]
+        }
+      ],
+      "cardio": [
+        {
+          "id": "seed1z",
+          "type": "bici",
+          "minutes": 40,
+          "kcal": null,
+          "hr": null
+        }
+      ],
+      "pushups": {
+        "max": null,
+        "total": null
+      },
+      "sleep": {
+        "bed": "",
+        "wake": "",
+        "hours": null,
+        "quality": null,
+        "napMin": null,
+        "score": null,
+        "source": ""
+      },
+      "weight": null,
+      "steps": null,
+      "energy": null,
+      "hunger": null,
+      "notes": "Empecé a sumar carbohidratos en la cena y me siento mejor."
+    },
+    "2026-09-25": {
+      "meals": {
+        "desayuno": [
+          {
+            "id": "seed20",
+            "text": "Café negro",
+            "protein": 0,
+            "kcal": 5
+          },
+          {
+            "id": "seed21",
+            "text": "2 tostadas integrales + queso crema light + 2 huevos revueltos + pollo + zanahoria + lechuga",
+            "protein": 52,
+            "kcal": 505
+          }
+        ],
+        "almuerzo": [],
+        "merienda": [
+          {
+            "id": "seed22",
+            "text": "Café negro",
+            "protein": 0,
+            "kcal": 5
+          }
+        ],
+        "post": [
+          {
+            "id": "seed23",
+            "text": "Yogur griego natural (20 g prot) + 1 scoop y medio de whey",
+            "protein": 57,
+            "kcal": 395
+          }
+        ],
+        "cena": [],
+        "snacks": []
+      },
+      "cheat": false,
+      "supplements": {
+        "multi": true,
+        "omega3": true,
+        "creatina": true
+      },
+      "strength": [
+        {
+          "id": "seed24",
+          "routineId": "empuje",
+          "name": "Empuje (pecho + hombro + tríceps)",
+          "notes": "",
+          "exercises": [
+            {
+              "name": "Press banca plano con barra",
+              "sets": 6,
+              "reps": "10",
+              "kg": ""
+            },
+            {
+              "name": "Press inclinado con mancuernas",
+              "sets": 3,
+              "reps": "12",
+              "kg": ""
+            },
+            {
+              "name": "Fondos en paralelas",
+              "sets": 3,
+              "reps": "13",
+              "kg": ""
+            },
+            {
+              "name": "Press militar con barra",
+              "sets": 5,
+              "reps": "7",
+              "kg": ""
+            },
+            {
+              "name": "Elevaciones laterales con mancuernas",
+              "sets": 3,
+              "reps": "16",
+              "kg": ""
+            },
+            {
+              "name": "Extensión de tríceps sobre la cabeza",
+              "sets": 3,
+              "reps": "16",
+              "kg": ""
+            }
+          ]
+        }
+      ],
+      "cardio": [
+        {
+          "id": "seed25",
+          "type": "bici",
+          "minutes": 60,
+          "kcal": null,
+          "hr": null
+        }
+      ],
+      "pushups": {
+        "max": null,
+        "total": null
+      },
+      "sleep": {
+        "bed": "",
+        "wake": "",
+        "hours": null,
+        "quality": null,
+        "napMin": null,
+        "score": null,
+        "source": ""
+      },
+      "weight": null,
+      "steps": null,
+      "energy": null,
+      "hunger": null,
+      "notes": ""
+    },
+    "2026-09-27": {
+      "meals": {
+        "desayuno": [],
+        "almuerzo": [],
+        "merienda": [],
+        "post": [],
+        "cena": [],
+        "snacks": []
+      },
+      "cheat": false,
+      "supplements": {},
+      "strength": [],
+      "cardio": [
+        {
+          "id": "seed26",
+          "type": "bici",
+          "minutes": 62,
+          "kcal": 558,
+          "hr": 128
+        }
+      ],
+      "pushups": {
+        "max": null,
+        "total": null
+      },
+      "sleep": {
+        "bed": "",
+        "wake": "",
+        "hours": null,
+        "quality": null,
+        "napMin": null,
+        "score": null,
+        "source": ""
+      },
+      "weight": null,
+      "steps": null,
+      "energy": null,
+      "hunger": null,
+      "notes": "Bici interior 16:30 (reloj): pulso máx. 141 ppm."
+    }
+  },
+  "meta": {
+    "createdAt": "2026-09-28T00:45:43.162Z",
+    "lastBackupAt": null,
+    "lastSamsungImport": null
+  }
+}
