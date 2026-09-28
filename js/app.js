@@ -201,7 +201,7 @@ document.addEventListener('visibilitychange', () => {
   if (document.visibilityState === 'hidden' && saveTimer) saveNow();
 });
 
-const SEED_VERSION = 1;
+const SEED_VERSION = 2;
 
 async function loadHistory() {
   if ((ctx.state.meta.seedVersion || 0) >= SEED_VERSION) return;
@@ -212,7 +212,7 @@ async function loadHistory() {
     ctx.state.meta.seedVersion = SEED_VERSION;
     saveNow();
     render();
-    toast('Cargué tu historial de semanas anteriores.');
+    toast('Actualicé tu historial con los últimos días.');
   } catch (err) {
     console.error(err);
   }

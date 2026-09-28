@@ -1586,18 +1586,26 @@
             "kcal": 395
           }
         ],
-        "cena": [],
+        "cena": [
+          {
+            "id": "seed24",
+            "text": "Permitido",
+            "protein": null,
+            "kcal": null
+          }
+        ],
         "snacks": []
       },
-      "cheat": false,
+      "cheat": true,
       "supplements": {
         "multi": true,
         "omega3": true,
-        "creatina": true
+        "creatina": true,
+        "magnesio": true
       },
       "strength": [
         {
-          "id": "seed24",
+          "id": "seed25",
           "routineId": "empuje",
           "name": "Empuje (pecho + hombro + tríceps)",
           "notes": "",
@@ -1643,7 +1651,7 @@
       ],
       "cardio": [
         {
-          "id": "seed25",
+          "id": "seed26",
           "type": "bici",
           "minutes": 60,
           "kcal": null,
@@ -1669,21 +1677,131 @@
       "hunger": null,
       "notes": ""
     },
+    "2026-09-26": {
+      "meals": {
+        "desayuno": [
+          {
+            "id": "seed27",
+            "text": "Café negro",
+            "protein": 0,
+            "kcal": 5
+          }
+        ],
+        "almuerzo": [
+          {
+            "id": "seed28",
+            "text": "Mates con amigos + 1 porción de pizza",
+            "protein": 12,
+            "kcal": 290
+          }
+        ],
+        "merienda": [],
+        "post": [],
+        "cena": [
+          {
+            "id": "seed2b",
+            "text": "Ribs de carne con salsa BBQ (Rockefeller's, con mi novia)",
+            "protein": null,
+            "kcal": null
+          }
+        ],
+        "snacks": [
+          {
+            "id": "seed29",
+            "text": "Pororó (cine) + coca zero",
+            "protein": 3,
+            "kcal": 400
+          },
+          {
+            "id": "seed2a",
+            "text": "Empanadas frías que sobraron (a la madrugada)",
+            "protein": null,
+            "kcal": null
+          }
+        ]
+      },
+      "cheat": true,
+      "supplements": {
+        "multi": true,
+        "omega3": true,
+        "creatina": true,
+        "colageno": true,
+        "magnesio": true
+      },
+      "strength": [],
+      "cardio": [],
+      "pushups": {
+        "max": null,
+        "total": null
+      },
+      "sleep": {
+        "bed": "",
+        "wake": "",
+        "hours": null,
+        "quality": null,
+        "napMin": null,
+        "score": null,
+        "source": ""
+      },
+      "weight": null,
+      "steps": null,
+      "energy": null,
+      "hunger": null,
+      "notes": "Gran sábado. Bajón de madrugada con las empanadas que sobraron."
+    },
     "2026-09-27": {
       "meals": {
-        "desayuno": [],
-        "almuerzo": [],
-        "merienda": [],
+        "desayuno": [
+          {
+            "id": "seed2c",
+            "text": "Café negro",
+            "protein": 0,
+            "kcal": 5
+          }
+        ],
+        "almuerzo": [
+          {
+            "id": "seed2d",
+            "text": "Café negro",
+            "protein": 0,
+            "kcal": 5
+          },
+          {
+            "id": "seed2e",
+            "text": "Sobras: ribs + 2 empanadas",
+            "protein": null,
+            "kcal": null
+          }
+        ],
+        "merienda": [
+          {
+            "id": "seed2f",
+            "text": "Café negro chico",
+            "protein": 0,
+            "kcal": 5
+          },
+          {
+            "id": "seed2g",
+            "text": "Milanesa con queso + fideos (sobras del sábado)",
+            "protein": null,
+            "kcal": null
+          }
+        ],
         "post": [],
         "cena": [],
         "snacks": []
       },
-      "cheat": false,
-      "supplements": {},
+      "cheat": true,
+      "supplements": {
+        "multi": true,
+        "omega3": true,
+        "creatina": true,
+        "colageno": true
+      },
       "strength": [],
       "cardio": [
         {
-          "id": "seed26",
+          "id": "seed2h",
           "type": "bici",
           "minutes": 62,
           "kcal": 558,
@@ -1707,11 +1825,11 @@
       "steps": null,
       "energy": null,
       "hunger": null,
-      "notes": "Bici interior 16:30 (reloj): pulso máx. 141 ppm."
+      "notes": "Bici interior 16:30 (reloj): pulso máx. 141 ppm. Tercer día seguido fuera del plan por las sobras; me siento lleno y culpable, sin cena."
     }
   },
   "meta": {
-    "createdAt": "2026-09-28T00:45:43.162Z",
+    "createdAt": "2026-09-28T01:24:54.556Z",
     "lastBackupAt": null,
     "lastSamsungImport": null
   }
