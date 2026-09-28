@@ -7,9 +7,15 @@ import * as weekView from './views/week.js';
 import * as progressView from './views/progress.js';
 import * as coachView from './views/coach.js';
 import * as settingsView from './views/settings.js';
+import * as wizardView from './views/wizard.js';
+import * as writeView from './views/write.js';
+
+const TAB_OF = { cargar: 'hoy', escribir: 'hoy' };
 
 const views = {
   hoy: dayView,
+  cargar: wizardView,
+  escribir: writeView,
   semana: weekView,
   progreso: progressView,
   coach: coachView,
@@ -83,7 +89,7 @@ function render({ focus = null, resetScroll = false } = {}) {
       }
     }
   }
-  document.querySelectorAll('.tabbar a').forEach((a) => a.classList.toggle('active', a.dataset.route === ctx.route));
+  document.querySelectorAll('.tabbar a').forEach((a) => a.classList.toggle('active', a.dataset.route === (TAB_OF[ctx.route] || ctx.route)));
 }
 
 Object.assign(ctx, {
@@ -148,6 +154,15 @@ root.addEventListener('click', (event) => {
     console.error(err);
     toast(`Error: ${err.message}`, 5000);
   });
+});
+
+root.addEventListener('keydown', (event) => {
+  const el = event.target;
+  if (event.key !== 'Enter' || event.isComposing || !el.dataset?.enter) return;
+  const handler = actionFor(el.dataset.enter);
+  if (!handler) return;
+  event.preventDefault();
+  handler(el, ctx, event);
 });
 
 root.addEventListener('input', (event) => {

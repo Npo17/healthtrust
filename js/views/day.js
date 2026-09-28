@@ -4,6 +4,7 @@ import { dayTotals, sleepOf } from '../metrics.js';
 import {
   addDays, clone, esc, fmtHours, fmtLong, fmtNum, isoWeek, isValidISO, numValue, planWeek, todayISO, uid,
 } from '../utils.js';
+import { firstPending } from './wizard.js';
 
 function currentDate(ctx) {
   const d = ctx.params.get('d');
@@ -183,13 +184,55 @@ function bodyCard(ctx, day, base) {
   </section>`;
 }
 
+function summaryRow(iso, step, label, value) {
+  return `<a class="sum-row${value ? '' : ' empty'}" href="#/cargar?d=${iso}&s=${step}">
+    <span class="sum-label">${label}</span>
+    <span class="sum-value">${value ? esc(value) : 'Sin cargar'}</span>
+    <span class="sum-go">›</span>
+  </a>`;
+}
+
+function summaryHtml(ctx, day, iso) {
+  const meals = MEAL_SLOTS.map((slot) => {
+    const texts = (day.meals[slot.id] || []).map((i) => i.text).filter(Boolean);
+    return texts.length ? summaryRow(iso, slot.id, slot.label, texts.join(' + ')) : '';
+  }).join('');
+  const supps = ctx.state.supplements.filter((s) => day.supplements[s.id]);
+  const suppText = !supps.length ? '' : supps.length === ctx.state.supplements.length ? 'Todos' : supps.map((s) => s.name).join(', ');
+  const cardio = day.cardio.map((c) => `${CARDIO_TYPES.find((t) => t.id === c.type)?.label || 'Cardio'} ${c.minutes ?? '?'} min${c.kcal ? ` · ${c.kcal} kcal` : ''}`).join(' + ');
+  const sleep = sleepOf(day).hours;
+  return `<section class="card flush summary">
+    ${meals || summaryRow(iso, 'desayuno', 'Comidas', '')}
+    ${summaryRow(iso, 'suplementos', 'Suplementos', suppText)}
+    ${summaryRow(iso, 'fuerza', 'Fuerza', day.strength.map((s) => s.name || 'Fuerza').join(' + '))}
+    ${summaryRow(iso, 'cardio', 'Cardio', cardio)}
+    ${summaryRow(iso, 'sueno', 'Sueño', sleep ? `${fmtHours(sleep)} (${day.sleep.bed || '?'} → ${day.sleep.wake || '?'})` : '')}
+    ${summaryRow(iso, 'peso', 'Peso', day.weight != null ? `${fmtNum(day.weight, 2)} kg` : '')}
+    ${day.cheat ? summaryRow(iso, 'cierre', 'Permitido', 'Sí') : ''}
+  </section>`;
+}
+
+function simpleRender(ctx, iso, day) {
+  const started = Object.values(day.meals).some((l) => l.length) || day.strength.length || day.cardio.length;
+  const next = firstPending(ctx.state, ctx.state.days[iso]);
+  return `
+  <div class="big-actions">
+    <a class="btn big" href="#/cargar?d=${iso}&s=${next}">${started ? 'Seguir cargando' : 'Cargar el día'}<small>Paso a paso, una pregunta por pantalla</small></a>
+    <a class="btn ghost big" href="#/escribir?d=${iso}">Escribirlo todo de una<small>Como en tu Excel o en un mensaje</small></a>
+  </div>
+  <div class="stats" data-live="day-stats">${statsHtml(ctx, day)}</div>
+  ${summaryHtml(ctx, day, iso)}
+  <p class="center-text"><a class="link small" href="#/hoy?d=${iso}&full=1">Ver todo en detalle (gramos, series, kilos)</a></p>`;
+}
+
 export function render(ctx) {
   const iso = currentDate(ctx);
   const day = ctx.state.days[iso] || emptyDay();
   const base = `days.${iso}`;
   const today = todayISO();
   const week = planWeek(iso, ctx.state.profile.planStart);
-  return `
+  const full = ctx.params.get('full') === '1';
+  const header = `
   <section class="daybar">
     <button class="icon-btn" data-action="day-nav" data-delta="-1" aria-label="Día anterior">‹</button>
     <div class="daybar-center">
@@ -201,7 +244,10 @@ export function render(ctx) {
   <div class="row gap wrap center">
     <input type="date" class="date-input" value="${iso}" data-change="day-go" aria-label="Elegir fecha">
     ${iso !== today ? '<button class="btn ghost small" data-action="day-today">Ir a hoy</button>' : ''}
-  </div>
+  </div>`;
+  if (!full) return header + simpleRender(ctx, iso, day);
+  return `${header}
+  <p class="center-text"><a class="link small" href="#/hoy?d=${iso}">← Volver al resumen</a></p>
   <div class="stats" data-live="day-stats">${statsHtml(ctx, day)}</div>
   <div class="quick">
     <button class="btn" data-action="typical-load">Mi día típico</button>
@@ -220,7 +266,7 @@ function dayOf(ctx) {
   return ensureDay(ctx.state, currentDate(ctx));
 }
 
-function lastSession(state, before, routineId) {
+export function lastSession(state, before, routineId) {
   const dates = Object.keys(state.days).filter((d) => d < before).sort().reverse();
   for (const d of dates) {
     const found = state.days[d].strength.find((s) => s.routineId === routineId);
@@ -269,7 +315,7 @@ export const actions = {
     ctx.toast('Copié las comidas de ayer en las comidas vacías.');
   },
 
-  'day-nav': (el, ctx) => ctx.go('hoy', { d: addDays(currentDate(ctx), Number(el.dataset.delta)) }),
+  'day-nav': (el, ctx) => ctx.go('hoy', { d: addDays(currentDate(ctx), Number(el.dataset.delta)), full: ctx.params.get('full') }),
   'day-today': (el, ctx) => ctx.go('hoy'),
   'day-go': (el, ctx) => { if (isValidISO(el.value)) ctx.go('hoy', { d: el.value }); },
 

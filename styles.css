@@ -154,7 +154,7 @@ input[type="date"], input[type="time"] { min-width: 0; }
 .daybar-center { flex: 1; text-align: center; }
 .date-input { max-width: 190px; }
 
-.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(118px, 1fr)); gap: 8px; margin: 10px 0; }
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); gap: 8px; margin: 10px 0; }
 .stat { display: flex; flex-direction: column; gap: 2px; padding: 10px 12px; background: var(--panel); border: 1px solid var(--line); border-radius: 12px; }
 .card .stat { background: var(--panel-2); }
 .stat-val { font-size: 18px; font-weight: 700; }
@@ -302,6 +302,49 @@ table.simple th { color: var(--muted); font-size: 12px; font-weight: 600; }
 .pending { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin: 4px 0 10px; font-size: 13px; }
 .pending .chip { border-color: rgba(245, 158, 11, 0.5); color: var(--warn); }
 .done-note { margin: 4px 0 10px; color: var(--accent); font-size: 13px; }
+
+.big-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 12px 0; }
+@media (max-width: 600px) { .big-actions { grid-template-columns: 1fr; } }
+.btn.big { flex-direction: column; gap: 2px; min-height: 64px; font-size: 17px; }
+.btn.big small { font-size: 12px; font-weight: 500; opacity: 0.75; }
+.btn.wide { width: 100%; margin-top: 12px; }
+
+.summary .sum-row { display: grid; grid-template-columns: 110px 1fr 16px; align-items: center; gap: 10px; padding: 13px 14px; color: var(--text); text-decoration: none; border-bottom: 1px solid var(--line); }
+.summary .sum-row:last-child { border-bottom: 0; }
+.summary .sum-row:hover { background: var(--panel-2); }
+.sum-label { color: var(--muted); font-size: 13px; }
+.sum-value { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.sum-row.empty .sum-value { color: var(--warn); font-size: 13px; }
+.sum-go { color: var(--muted); font-size: 20px; }
+
+.wizard { max-width: 620px; margin: 0 auto; padding-top: 4px; }
+.wiz-top { display: flex; justify-content: space-between; align-items: center; margin: 4px 2px 8px; }
+.wiz-bar { height: 5px; overflow: hidden; background: var(--panel-2); border-radius: 4px; }
+.wiz-bar i { display: block; height: 100%; background: var(--accent); transition: width 0.25s; }
+.wiz-q { margin: 26px 2px 14px; font-size: 26px; }
+.wiz-body h3 { margin: 16px 0 6px; }
+.wiz-nav { display: flex; justify-content: space-between; gap: 10px; margin-top: 24px; }
+.wiz-nav .btn { flex: 1; min-height: 50px; font-size: 16px; }
+.wiz-nav .btn.ghost { flex: 0 0 110px; }
+.write-row { display: flex; gap: 8px; margin: 8px 0; }
+.write-row input { min-height: 50px; font-size: 16px; }
+.big-chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0; }
+.big-chips .chip { padding: 11px 15px; font-size: 15px; }
+.big-checks { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.big-checks .check { padding: 13px 14px; border-radius: 12px; font-size: 15px; }
+.picked { display: flex; flex-direction: column; gap: 6px; margin: 0 0 8px; padding: 0; list-style: none; }
+.picked li { display: flex; align-items: center; gap: 8px; padding: 10px 12px; background: var(--panel); border: 1px solid var(--line); border-radius: 12px; }
+.picked li > span { display: flex; flex: 1; flex-direction: column; min-width: 0; }
+.picked small { color: var(--muted); font-size: 12px; }
+.picked select { width: auto; max-width: 140px; }
+.picked-session, .cardio-card { margin-bottom: 10px; padding: 12px; background: var(--panel); border: 1px solid var(--line); border-radius: 12px; }
+.cardio-card .row { margin-top: 6px; }
+.center-y { align-items: center; }
+.grow { flex: 1; }
+.big-number { margin: 14px 0 0; font-size: 34px; font-weight: 800; text-align: center; }
+.mini.big input { min-height: 60px; font-size: 26px; text-align: center; padding-right: 50px; }
+.mini.big span { font-size: 16px; }
+.day-text { min-height: 280px; font-size: 15px; }
 
 .report { min-height: 340px; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 12.5px; line-height: 1.5; }
 .steps { margin: 8px 0 12px; padding-left: 22px; }
